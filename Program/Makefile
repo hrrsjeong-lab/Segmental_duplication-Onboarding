@@ -5,9 +5,9 @@ MEMS = 100
 MEM_PER_CPU = $(shell echo '$(MEMS)/$(CPUS)' | bc)
 
 # Programs
-SLURM = srun --chdir=$(abspath .) --cpus-per-task=$(CPUS) --export=ALL --job-name="SDs_$(@F)" --mem=$(MEMS)G
-PYTHON = /home/Live/jaewoong/JeongLab_Onboarding/3_Segmental_duplications/.venv/bin/python3 -B
-BISER = /home/Live/jaewoong/JeongLab_Onboarding/3_Segmental_duplications/.venv/bin/biser
+SLURM = srun --chdir=$(abspath .) --cpus-per-task=$(CPUS) --export=ALL --job-name="SDs_$(@F)" --mem=$(MEMS)G --mail-user="jaewoong@gist.ac.kr" --mail-type=FAIL
+PYTHON = /home/Live/jaewoong/Segmental_duplication-Onboarding/.venv/bin/python3 -B
+BISER = /home/Live/jaewoong/Segmental_duplication-Onboarding/.venv/bin/biser
 SEDEF = /home/Share/Tools/sedef-1.1/sedef.sh
 BGZIP = /usr/bin/bgzip
 BEDTOOLS = /usr/bin/bedtools
